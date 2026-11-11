@@ -1,0 +1,31 @@
+{
+  "name": "dsh-plugin-web-search-exa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Exa-backed search and fetch providers for the DeepSeek Harness built-in web_search and web_fetch tools.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-credentials": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/dsh-launch-environment": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/dsh-web": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/schemastery": "~3.19.0"
+  }
+}

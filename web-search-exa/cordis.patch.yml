@@ -1,0 +1,20 @@
+# Exa-backed providers for the built-in web_search / web_fetch tools.
+#
+# The providers register into the host `ctx.web` seam. Pinning them in the same
+# host row is what replaces the shipped DeepSeek search and HTTP fetch
+# backends; the model-facing tools stay exactly as dsh-tool-web defines them.
+#
+# A row config is replaced as a whole, so the `web` override restates both
+# provider fields. Removing this bundle should also remove that override:
+# with it left behind, ctx.web fails as WEB_PROVIDER_CONFIGURED_MISSING.
+- insert:
+    - id: web-search-exa
+      name: dsh-plugin-web-search-exa
+      config:
+        apiKeyEnv: EXA_API_KEY
+
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: exa-search
+    fetchProvider: exa-fetch

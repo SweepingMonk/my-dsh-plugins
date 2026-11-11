@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Exa web search",
+    "description": "Exa-backed search and fetch providers for the built-in web_search and web_fetch tools."
+  }
+}
