@@ -1,0 +1,8 @@
+# Adds the enhancer to the profile's plugin tree. It takes no services beyond
+# locale and theme, so it can load whether or not the preview tab is open.
+- insert:
+    - id: local-markdown-mermaid
+      name: '@local/markdown-mermaid'
+      # scope: 'preview' limits enhancement to the right-side document preview;
+      # omit it to also enhance chat and reasoning blocks.
+      config: {}
